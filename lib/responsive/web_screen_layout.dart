@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_search_clone/colors.dart';
 import 'package:google_search_clone/widgets/translations_buttons.dart';
+import 'package:google_search_clone/widgets/web/web_footer.dart';
 import 'package:google_search_clone/widgets/web/web_search_button.dart';
 import 'package:google_search_clone/widgets/search.dart';
 
@@ -43,12 +43,8 @@ class WebScreenLayout extends StatelessWidget {
           IconButton(
             onPressed: () {},
             hoverColor: Colors.black26,
-            icon: SvgPicture.asset(
-              "assets/images/more-apps.svg",
-              package: 'images',
+            icon: Image.asset("assets/images/more-apps.png", height: 28, width: 28,),
             ),
-            color: primaryColor,
-          ),
           const SizedBox(
             width: 10,
           ),
@@ -71,7 +67,7 @@ class WebScreenLayout extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: size.height * 0.25,
+              height: size.height * 0.18,
             ),
             const Expanded(
               child: Column(
@@ -89,7 +85,8 @@ class WebScreenLayout extends StatelessWidget {
                       ),
                       TranslationButtons(),
                     ],
-                  )
+                  ),
+                  WebFooter(),
                 ],
               ),
             )

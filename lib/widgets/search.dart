@@ -15,14 +15,15 @@ class Search extends StatelessWidget {
         Center(
           child: Image.asset(
             'assets/images/google-logo.png',
-            height: size.height * 0.15,
+            height: size.height * 0.12,
           ),
         ),
         const SizedBox(
           height: 20,
         ),
         SizedBox(
-          width: size.width * 0.4,
+          width: size.width < 768 ? size.width*0.8: 583,
+          height: 48,
           child: TextFormField(
             decoration: InputDecoration(
               border: const OutlineInputBorder(
@@ -32,15 +33,22 @@ class Search extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(30)),
               ),
               prefixIcon: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(16.0),
                 child: SvgPicture.asset(
                   'assets/images/search-icon.svg',
                   color: searchBorder,
                 ),
               ),
               suffixIcon: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset('assets/images/mic-icon.svg'),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SvgPicture.asset('assets/images/mic-icon.svg'),
+                    const SizedBox(width: 10,),
+                    Image.asset('assets/images/google-lens_1.png', height: 20, width: 20,),
+                  ],
+                ),
               ),
             ),
           ),

@@ -7,6 +7,7 @@ class TranslationButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Wrap(
+      alignment: WrapAlignment.center,
       children:  [
         Text("Google offered in:"),
         SizedBox(width: 5),
