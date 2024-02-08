@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 // displays the title and link of the search results
 class LinkText extends StatefulWidget {
   final String link;
@@ -39,7 +40,10 @@ class _LinkTextState extends State<LinkText> {
         children: [
           Text(
             widget.link,
-            style: const TextStyle(fontSize: 14, color: Color(0xFF202124),),
+            style: const TextStyle(
+              fontSize: 14,
+              color: Color(0xFF202124),
+            ),
           ),
           Text(
             widget.text,

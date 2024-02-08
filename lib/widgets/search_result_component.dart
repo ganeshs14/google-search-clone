@@ -38,13 +38,13 @@ class SearchResultComponent extends StatelessWidget {
               fontSize: 20,
             ),
             onTap: () async {
-              if (await canLaunch(linkToGo)) {
-                await launch(linkToGo);
+              if (await canLaunchUrl (linkToGo as Uri)) {
+                await launchUrl(linkToGo as Uri);
               }
             },
           ),
         ),
-        // showing the meta data or the description of the wbesite
+        // metadata of web
         Text(
           desc,
           style: const TextStyle(

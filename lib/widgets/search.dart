@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_search_clone/colors.dart';
 import 'package:google_search_clone/screens/search_screen.dart';
+import 'package:google_search_clone/widgets/translations_buttons.dart';
+import 'package:google_search_clone/widgets/web/search_buttons.dart';
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -26,41 +28,48 @@ class Search extends StatelessWidget {
           width: size.width > 768 ? size.width * 0.4 : size.width * 0.8,
           child: TextFormField(
             onFieldSubmitted: (query) {
-              Navigator.of(context).push(MaterialPageRoute(
+              Navigator.of(context).push(
+                MaterialPageRoute(
                   builder: (context) => SearchScreen(
-                        searchQuery: query,
-                        start: '0',
-                      )));
-            },
-            decoration: InputDecoration(
-              border: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: searchBorder,
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(
-                    30,
+                    searchQuery: query,
+                    start: '0',
                   ),
                 ),
-              ),
-              prefixIcon: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset(
-                  'assets/images/search-icon.svg',
-                  color: searchBorder,
-                  height: 1,
-                  width: 1,
+              );
+            },
+            decoration: InputDecoration(
+                border: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: searchBorder,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(
+                      30,
+                    ),
+                  ),
                 ),
-              ),
-              suffixIcon: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset('assets/images/mic-icon.svg'),
-              ),
-            ),
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SvgPicture.asset(
+                    'assets/images/search-icon.svg',
+                    color: searchBorder,
+                    height: 1,
+                    width: 1,
+                  ),
+                ),
+                suffixIcon: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SvgPicture.asset('assets/images/mic-icon.svg'),
+                )),
           ),
         ),
         const SizedBox(
           height: 10,
+        ),
+        const SearchButtons(),
+        const Padding(
+          padding: EdgeInsets.all(10.0),
+          child: TranslationButtons(),
         ),
       ],
     );

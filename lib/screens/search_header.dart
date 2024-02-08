@@ -21,6 +21,7 @@ class SearchHeader extends StatelessWidget {
         ),
         const SizedBox(width: 27),
         Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14.0),
           width: size.width * 0.45,
           height: 44,
           decoration: BoxDecoration(

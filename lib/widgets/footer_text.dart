@@ -7,14 +7,11 @@ class FooterText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
-      child: Text(
-        title,
-        style: const TextStyle(
-          color: Color.fromARGB(255, 237, 237, 237),
-        ),
-      ),
-      
-    );
+        onPressed: () {},
+        child: Text(title,
+            style: const TextStyle(
+              color: Color(0xff70757a),
+              fontSize: 16,
+            )));
   }
 }

@@ -26,13 +26,12 @@ class MobileFooter extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FooterText(title: 'About'),
-              SizedBox(width: 10),
+              SizedBox(width: 7),
               FooterText(title: 'Advertising'),
-              SizedBox(width: 10),
+              SizedBox(width: 7),
               FooterText(title: 'Business'),
-              SizedBox(width: 10),
+              SizedBox(width: 7),
               FooterText(title: 'How Search Works'),
-              SizedBox(width: 10),
             ],
           ),
           SizedBox(

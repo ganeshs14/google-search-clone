@@ -1,10 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:google_search_clone/config/api_json.dart';
 import 'package:google_search_clone/config/api_keys.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class ApiService {
-  bool isDummy = false;
+  bool isDummy = true;
   Future<Map<String, dynamic>> fetchData(
       {required String queryTerm, String start = '0'}) async {
     try {
@@ -14,7 +15,7 @@ class ApiService {
             : queryTerm;
         String url =
             'https://www.googleapis.com/customsearch/v1?key=$apiKey&cx=$contextKey&q=$q&start=$start';
-        print(url);
+        debugPrint;
         final response = await http.get(Uri.parse(
           url,
         ));
@@ -23,12 +24,12 @@ class ApiService {
           final resData = json.decode(jsonData);
           return resData;
         } else {
-          print("Response status: ${response.statusCode}");
-          print("Response body: ${response.body}");
+          debugPrint("Response status: ${response.statusCode}");
+          debugPrint("Response body: ${response.body}");
         }
       }
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
     }
     return apiResponse;
   }
